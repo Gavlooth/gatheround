@@ -1,0 +1,42 @@
+ body{
+ margin: 0;
+ padding: 0;
+ background: linear-gradient(to bottom right, #E3F0FF, #FAFCFF);
+ height: 90vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+
+.central-container {
+        width: 10rem ;
+        margin-top: 5rem;
+        margin-left: calc(50% - 5rem);
+        padding: 1rem;
+        display:flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items:center;
+
+}
+
+.display-container{
+position:relative ;
+background-color:Blanchedalmond;
+width:10rem;
+height: 3rem;}
+
+
+.display-container > span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.search-form {margin: 1rem}
+
+
+.submit-button{border-radius:1rem;}

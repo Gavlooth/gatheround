@@ -1,0 +1,22 @@
+{ :lein {:profile "+cljs"}
+
+  :nrepl  {:port 8450}
+
+
+
+  :builds {:app {:target     :browser
+                 :output-dir "public/js"
+                 :asset-path "/js"
+                 :compiler-options {:infer-externs    :auto
+                                    :closure-warnings {:global-this :off}}
+                 :modules {:gatheround-webapp {:init-fn  gatheround.core/app}};]}}
+                 :devtools  {:http-root "public"
+                             :http-port 3001}
+
+
+                 #_#_:devtools {:watch-dir "public" :watch-path "/foo"}}}}
+
+
+
+           ;; :modules    {:giantbomb-webapp {:init-fn giantbomb-webapp.core/app}}}}
+

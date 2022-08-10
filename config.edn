@@ -1,0 +1,2 @@
+{:remote-host {:host "localhost" :port 9001}
+ :server  {:port 9001}}
