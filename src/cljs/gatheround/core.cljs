@@ -36,7 +36,7 @@
 
 (defnc Main-component []
   (let [ [{:keys [intro middle end]:as state} set-state] (hooks/use-state  ["event 1" "event 2" "event 3"])
-         a-component    (apply $ (into [ :div] (mapv #($ :div  % ) (range 1 5))))
+         ;; a-component    (apply $ (into [ :div] (mapv #($ :div  % ) (range 1 5))))
          container (atom "")]
          
     #h/e [:div {:class "central-container"} [:div {:on-click (fn [ event ] (when-not (clojure.string/blank? @container)
@@ -50,9 +50,9 @@
 
           [:div {:on-click (fn [ event])} 
                 "delete event"
-             (apply $ (into [ :div] (vec (map-indexed #($ :div {:data-index  % 
-                                                                :on-click (fn [event]  (set-state (fn [s] (vec (concat  (take % s )  (drop  (inc %) s))))))}
-                                                               %2) state))))
+             ($ :div  (vec (map-indexed #($ :div {:data-index  % 
+                                                       :on-click (fn [event]  (set-state (fn [s] (vec (concat  (take % s )  (drop  (inc %) s))))))}
+                                                 %2) state)))
            #_(mapv #($ [:div  %] ) (range 1 5))]
           #_(apply  $  (m/spy))]))
             
